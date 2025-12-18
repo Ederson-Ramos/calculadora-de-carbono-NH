@@ -1,0 +1,80 @@
+.fomulario-entrar,
+.fomulario-cadastrar {
+    background-color: #ffffff;
+    box-shadow: 0 5px 17px #141e1136;
+    padding: 35px 24px;
+    border-radius: 15px;
+    border: 1px solid #dae7de;
+}
+
+.fomulario-cadastrar {
+    display: none;
+}
+
+/* INTRO FORM */
+
+.intro {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.intro__icone {
+    background-color: rgba(46, 184, 96, 0.1);
+    padding: 10px 15px;
+    border-radius: 50%;
+    font-size: 25px;
+    color: #2eb860;
+}
+
+.intro__titulo {
+    color: #2b3b33;
+    font-size: 25px;
+    font-weight: bold;
+    margin: 25px 0 8px;
+}
+
+.intro__texto {
+    margin: 0;
+    color: #677e73;
+    font-size: 15px;
+}
+
+/* FORM */
+
+label {
+    color: #2b3b33;
+    font-weight: 500;
+}
+
+form .btn {
+    background-color: #2eb860;
+    color: #ffffff;
+    font-weight: 500;
+    width: 100%;
+    border-radius: 15px;
+    padding: 8px 0;
+}
+
+.trocar-form {
+    text-align: center;
+    color: #2eb860;
+    margin: 30px 0 0;
+}
+
+.trocar-form:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+/* INPUTS */
+
+.container div input {
+    background-color: #f5faf7;
+    border-radius: 15px;
+}
+
+.container div input:focus {
+    background-color: #f5faf7;
+    box-shadow: 0 0 0 2px #2eb860;
+    border-color: transparent;
+}
