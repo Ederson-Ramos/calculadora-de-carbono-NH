@@ -1,10 +1,18 @@
 const db = require("../config/db");
 
-function criarUsuario(email, senha) {
+async function criarUsuario(email, senha) {
     const sql = "INSERT INTO usuarios (email, senha) VALUES (?, ?)";
-    db.query(sql, [email, senha]);
+    await db.query(sql, [email, senha]);
+}
+
+async function buscarUsuario(email) {
+    const sql = "SELECT email FROM usuarios WHERE email = ?;";
+    const result = await db.query(sql, [email]);
+
+    return result;
 }
 
 module.exports = {
-    criarUsuario
+    criarUsuario,
+    buscarUsuario
 }

@@ -18,8 +18,8 @@ $(document).ready(() => {
         formularioCadastro.submit(async (e) => {
             e.preventDefault();
 
-            const email = $("#emailCadastro").val();
-            const senha = $("#senhaCadastro").val();
+            const valorEmail = $("#emailCadastro").val();
+            const valorSenha = $("#senhaCadastro").val();
 
             try {
                 const resposta = await fetch("http://localhost:3000/usuarios/cadastrar", {
@@ -27,23 +27,65 @@ $(document).ready(() => {
                     headers: {
                         "Content-Type": "application/json"
                     },
-                    body: JSON.stringify({ email, senha })
+                    body: JSON.stringify({ valorEmail, valorSenha })
                 });
 
                 const data = await resposta.json();
 
                 if (!resposta.ok) {
-                    console.log(data.erro);
+                    $(".mensagem-erro__texto").text(data.erro);
+
+                    $(".msg-erro").show();
+
+                    setTimeout(() => {
+                        $(".msg-erro").hide();
+                    }, 3000);
+
                     return;
                 }
 
-                console.log(data.mensagem);
+                $(".mensagem-sucesso__texto").text(data.mensagem);
+
+                $(".msg-sucesso").show();
+
+                setTimeout(() => {
+                    $(".msg-sucesso").hide();
+                }, 5000);
+
+                // Inputs
+                const email = $("#emailCadastro");
+                const senha = $("#senhaCadastro");
+
+                email.val("");
+                senha.val("");
 
             } catch(err) {
                 console.log("Erro ao cadastrar usuário:", err);
             }
         });
     }
+
+    function validarForm(formulario) {
+        $(formulario).validate({
+            rules: {
+                email: {
+                    required: true,
+                    email: true
+                },
+                senha: {
+                    required: true,
+                    minlength: 8
+                }
+            },
+            errorPlacement: function(error, element) {
+                error.insertAfter(element.closest(".input-group"));
+            }
+        });
+    }
+
+    // Validações Front formulário
+    validarForm("#form-cadastro");
+    validarForm("#form-entrar");
 
     trocarForm();
     cadastrarUsuario();

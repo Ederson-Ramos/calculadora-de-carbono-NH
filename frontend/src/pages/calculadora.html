@@ -55,9 +55,9 @@
                 <p class="intro__texto">Calculadora de Carbono - Novo Hamburgo</p>
             </div>
 
-            <form>
+            <form id="form-entrar">
                 <div class="mb-3">
-                    <label for="email" class="form-label">Email</label>
+                    <label for="emailEntrar" class="form-label">Email</label>
                     <div class="input-group flex-nowrap">
                         <i class="bi bi-envelope input-group-text"></i>
                         <input type="email" class="form-control" id="emailEntrar" placeholder="seu@email.com">
@@ -65,10 +65,10 @@
                 </div>
 
                 <div class="mb-3">
-                    <label for="senha" class="form-label">Senha</label>
+                    <label for="senhaEntrar" class="form-label">Senha</label>
                     <div class="input-group flex-nowrap">
                         <i class="bi bi-lock input-group-text"></i>
-                        <input type="password" class="form-control" id="senhaEntrar" placeholder="●●●●●●">
+                        <input type="password" class="form-control" id="senhaEntrar" placeholder="••••••••">
                     </div>
                 </div>
                 <button type="submit" class="btn">Entrar</button>
@@ -87,18 +87,18 @@
 
             <form id="form-cadastro">
                 <div class="mb-3">
-                    <label for="email" class="form-label">Email</label>
+                    <label for="emailCadastro" class="form-label">Email</label>
                     <div class="input-group flex-nowrap">
                         <i class="bi bi-envelope input-group-text"></i>
-                        <input type="email" class="form-control" id="emailCadastro" placeholder="seu@email.com">
+                        <input type="email" class="form-control" id="emailCadastro" name="email" placeholder="seu@email.com">
                     </div>
                 </div>
 
                 <div class="mb-3">
-                    <label for="senha" class="form-label">Senha</label>
+                    <label for="senhaCadastro" class="form-label">Senha</label>
                     <div class="input-group flex-nowrap">
                         <i class="bi bi-lock input-group-text"></i>
-                        <input type="password" class="form-control" id="senhaCadastro" placeholder="●●●●●●">
+                        <input type="password" class="form-control" id="senhaCadastro" name="senha" placeholder="••••••••">
                     </div>
                 </div>
                 <button type="submit" class="btn">Cadastrar</button>
@@ -108,8 +108,30 @@
         </div>
     </div>
 
+    <div class="msg-sucesso">
+        <div class="container container--sucesso">
+            <div class="mensagem-sucesso">
+                <i class="bi bi-check-circle-fill"></i>
+                <p class="mensagem-sucesso__texto"></p>
+            </div>
+        </div>
+    </div>
+
+    <div class="msg-erro">
+        <div class="container container--erro">
+            <div class="mensagem-erro">
+                <i class="bi bi-info-circle-fill"></i>
+                <p class="mensagem-erro__texto"></p>
+            </div>
+        </div>
+    </div>
+
     <!-- jQuery -->
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+    <!-- Plugin de validação JQuery -->
+    <script src="../components/form/jquery.validate.min.js"></script>
+    <script src="../components/form/messages_pt_BR.js"></script>
 
     <!-- JS do header -->
     <script src="../components/header/header.js"></script>
