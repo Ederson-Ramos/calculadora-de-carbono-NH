@@ -12,17 +12,17 @@ $(document).ready(() => {
         });
     }
 
-    function cadastrarUsuario() {
-        const formularioCadastro = $("#form-cadastro");
+    function EntrarCadastrarUsuario(formulario, inputEmail, inputSenha, rota) {
+        const form = $(formulario);
 
-        formularioCadastro.submit(async (e) => {
+        form.submit(async (e) => {
             e.preventDefault();
 
-            const valorEmail = $("#emailCadastro").val();
-            const valorSenha = $("#senhaCadastro").val();
+            const valorEmail = $(inputEmail).val();
+            const valorSenha = $(inputSenha).val();
 
             try {
-                const resposta = await fetch("http://localhost:3000/usuarios/cadastrar", {
+                const resposta = await fetch("http://localhost:3000/usuarios/" + rota, {
                     method: "POST",
                     headers: {
                         "Content-Type": "application/json"
@@ -39,7 +39,7 @@ $(document).ready(() => {
 
                     setTimeout(() => {
                         $(".msg-erro").hide();
-                    }, 3000);
+                    }, 5000);
 
                     return;
                 }
@@ -53,8 +53,8 @@ $(document).ready(() => {
                 }, 5000);
 
                 // Inputs
-                const email = $("#emailCadastro");
-                const senha = $("#senhaCadastro");
+                const email = $(inputEmail);
+                const senha = $(inputSenha);
 
                 email.val("");
                 senha.val("");
@@ -88,5 +88,8 @@ $(document).ready(() => {
     validarForm("#form-entrar");
 
     trocarForm();
-    cadastrarUsuario();
+
+    // Reutilização da mesma função/lógica para o formulário do usuário
+    EntrarCadastrarUsuario("#form-cadastro", "#emailCadastro", "#senhaCadastro", "cadastrar");
+    EntrarCadastrarUsuario("#form-entrar", "#emailEntrar", "#senhaEntrar", "entrar");
 });
