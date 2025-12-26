@@ -15,3 +15,90 @@ body {
 .container {
     padding: 32px 16px;
 }
+
+/* INICIO */
+
+.inicio {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.inicio__titulo {
+    color: #2b3b33;
+    font-size: 30px;
+    font-weight: bold;
+    padding: 0 0 11px 0;
+    margin: 0;
+}
+
+.inicio__texto {
+    margin: 0;
+    color: #677e73;
+    font-size: 15px;
+    padding: 0 6px;
+}
+
+/* CALCULADORA */
+
+.calculadora {
+    background-color: #ffffff;
+    color: #2b3b33;
+    box-shadow: 0 5px 17px #141e1136;
+    padding: 20px 15px;
+    border-radius: 15px;
+    border: 1px solid #dae7de;
+}
+
+.container-radio {
+    padding: 0 12px;
+}
+
+.calculadora__radioButtons {
+    margin: 15px 0 18px 0;
+}
+
+.calculadora__radioButtons label {
+    border: 1px solid #b9c4bc;
+    padding: 15px;
+    border-radius: 15px;
+    font-size: 20px;
+    width: 100%;
+}
+
+input[type=radio] {
+    transform: scale(1.2);
+    accent-color: #26aa57;
+}
+
+label input[type=radio]:focus {
+    box-shadow: none;
+}
+
+label,
+.calculadora__titulo {
+    color: #2b3b33;
+    font-weight: 500;
+    font-size: 17px;
+    margin: 0;
+}
+
+.calculadora__calc input {
+    padding: 11px 9px;
+    margin: 15px 0;
+}
+
+/* DICA */
+
+.dica {
+    background-color: #f1f6f3;
+    padding: 24px;
+    border: 1px solid #cddad1;
+    border-radius: 17px;
+    margin-top: 15px;
+}
+
+.dica p {
+    margin: 0;
+    text-align: center;
+    color: #677e73;
+}

@@ -9,8 +9,6 @@ async function buscarUsuario(email) {
     const sql = "SELECT email, senha FROM usuarios WHERE email = ?;";
     const result = await db.query(sql, [email]);
 
-    console.log(result)
-
     return result;
 }
 

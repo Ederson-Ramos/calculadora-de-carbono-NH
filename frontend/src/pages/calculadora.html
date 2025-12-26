@@ -40,90 +40,138 @@
                 <nav class="nav__header">
                     <a href="index.html" class="nav__link">Início</a>
                     <a href="calculadora.html" class="nav__link nav__link--active">Calculadora</a>
-                    <a href="sobre.html" class="nav__link">Sobre</a>        
+                    <a href="sobre.html" class="nav__link">Histórico</a>        
                 </nav>
             </div>
         </div>
     </header>
 
-    <div class="container">
-        <!-- Entrar -->
-        <div class="fomulario-entrar">
-            <div class="intro">
-                <i class="bi bi-leaf intro__icone"></i>
-                <h2 class="intro__titulo">Entrar</h2>
-                <p class="intro__texto">Calculadora de Carbono - Novo Hamburgo</p>
+    <div class="form-none">
+        <div class="container">
+            <!-- Entrar -->
+            <div class="fomulario-entrar">
+                <div class="intro">
+                    <i class="bi bi-leaf intro__icone"></i>
+                    <h2 class="intro__titulo">Entrar</h2>
+                    <p class="intro__texto">Calculadora de Carbono - Novo Hamburgo</p>
+                </div>
+
+                <form id="form-entrar">
+                    <div class="mb-3">
+                        <label for="emailEntrar" class="form-label">Email</label>
+                        <div class="input-group flex-nowrap">
+                            <i class="bi bi-envelope input-group-text"></i>
+                            <input type="email" class="form-control" id="emailEntrar" name="email" placeholder="seu@email.com">
+                        </div>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="senhaEntrar" class="form-label">Senha</label>
+                        <div class="input-group flex-nowrap">
+                            <i class="bi bi-lock input-group-text"></i>
+                            <input type="password" class="form-control" id="senhaEntrar" name="senha" placeholder="••••••••">
+                        </div>
+                    </div>
+                    <button type="submit" class="btn">Entrar</button>
+                </form>
+
+                <p class="trocar-form trocar1">Não tem conta? Cadastre-se</p>
             </div>
 
-            <form id="form-entrar">
-                <div class="mb-3">
-                    <label for="emailEntrar" class="form-label">Email</label>
-                    <div class="input-group flex-nowrap">
-                        <i class="bi bi-envelope input-group-text"></i>
-                        <input type="email" class="form-control" id="emailEntrar" name="email" placeholder="seu@email.com">
-                    </div>
+            <!-- Cadastrar -->
+            <div class="fomulario-cadastrar">
+                <div class="intro">
+                    <i class="bi bi-leaf intro__icone"></i>
+                    <h2 class="intro__titulo">Criar Conta</h2>
+                    <p class="intro__texto">Calculadora de Carbono - Novo Hamburgo</p>
                 </div>
 
-                <div class="mb-3">
-                    <label for="senhaEntrar" class="form-label">Senha</label>
-                    <div class="input-group flex-nowrap">
-                        <i class="bi bi-lock input-group-text"></i>
-                        <input type="password" class="form-control" id="senhaEntrar" name="senha" placeholder="••••••••">
+                <form id="form-cadastro">
+                    <div class="mb-3">
+                        <label for="emailCadastro" class="form-label">Email</label>
+                        <div class="input-group flex-nowrap">
+                            <i class="bi bi-envelope input-group-text"></i>
+                            <input type="email" class="form-control" id="emailCadastro" name="email" placeholder="seu@email.com">
+                        </div>
                     </div>
-                </div>
-                <button type="submit" class="btn">Entrar</button>
-            </form>
 
-            <p class="trocar-form trocar1">Não tem conta? Cadastre-se</p>
+                    <div class="mb-3">
+                        <label for="senhaCadastro" class="form-label">Senha</label>
+                        <div class="input-group flex-nowrap">
+                            <i class="bi bi-lock input-group-text"></i>
+                            <input type="password" class="form-control" id="senhaCadastro" name="senha" placeholder="••••••••">
+                        </div>
+                    </div>
+                    <button type="submit" class="btn">Cadastrar</button>
+                </form>
+
+                <p class="trocar-form trocar2">Já tem conta? Entre</p>
+            </div>
         </div>
 
-        <!-- Cadastrar -->
-        <div class="fomulario-cadastrar">
-            <div class="intro">
-                <i class="bi bi-leaf intro__icone"></i>
-                <h2 class="intro__titulo">Criar Conta</h2>
-                <p class="intro__texto">Calculadora de Carbono - Novo Hamburgo</p>
+        <div class="msg-sucesso">
+            <div class="container container--sucesso">
+                <div class="mensagem-sucesso">
+                    <i class="bi bi-check-circle-fill"></i>
+                    <p class="mensagem-sucesso__texto"></p>
+                </div>
             </div>
+        </div>
 
-            <form id="form-cadastro">
-                <div class="mb-3">
-                    <label for="emailCadastro" class="form-label">Email</label>
-                    <div class="input-group flex-nowrap">
-                        <i class="bi bi-envelope input-group-text"></i>
-                        <input type="email" class="form-control" id="emailCadastro" name="email" placeholder="seu@email.com">
-                    </div>
+        <div class="msg-erro">
+            <div class="container container--erro">
+                <div class="mensagem-erro">
+                    <i class="bi bi-info-circle-fill"></i>
+                    <p class="mensagem-erro__texto"></p>
                 </div>
-
-                <div class="mb-3">
-                    <label for="senhaCadastro" class="form-label">Senha</label>
-                    <div class="input-group flex-nowrap">
-                        <i class="bi bi-lock input-group-text"></i>
-                        <input type="password" class="form-control" id="senhaCadastro" name="senha" placeholder="••••••••">
-                    </div>
-                </div>
-                <button type="submit" class="btn">Cadastrar</button>
-            </form>
-
-            <p class="trocar-form trocar2">Já tem conta? Entre</p>
+            </div>
         </div>
     </div>
 
-    <div class="msg-sucesso">
-        <div class="container container--sucesso">
-            <div class="mensagem-sucesso">
-                <i class="bi bi-check-circle-fill"></i>
-                <p class="mensagem-sucesso__texto"></p>
-            </div>
-        </div>
-    </div>
+    <div class="container content-under">
+        <div class="inicio">
+            <h1 class="inicio__titulo">Sua Calculadora Semanal de CO₂</h1>
 
-    <div class="msg-erro">
-        <div class="container container--erro">
-            <div class="mensagem-erro">
-                <i class="bi bi-info-circle-fill"></i>
-                <p class="mensagem-erro__texto"></p>
-            </div>
+            <p class="inicio__texto">Calcule sua pegada de carbono em Novo Hamburgo</p>
         </div>
+
+        <form class="calculadora">
+            <p class="calculadora__titulo">Tipo de Veículo</p>
+
+            <div class="calculadora__radioButtons">
+                <!-- Radio Carro -->
+                <label class="radio mb-2" for="car-radio" id="label-carro">
+                    <div class="d-flex align-items-center">
+                        <input type="radio" id="car-radio" name="veiculo">
+                        <i class="bi bi-car-front mx-3"></i>
+                        <p class="mb-0">carro</p>
+                    </div>
+                </label>
+
+                <!-- Radio Moto -->
+                <label class="radio" for="bike-radio" id="label-moto">
+                    <div class="d-flex align-items-center">
+                        <input type="radio" id="bike-radio" name="veiculo">
+                        <i class="bi bi-bicycle mx-3"></i>
+                        <p class="mb-0">moto</p>
+                    </div>
+                </label>
+            </div>
+
+            <div class="calculadora__calc">
+                <label for="km">Distância Percorrida Esta Semana (km)</label>
+
+                <input type="number" class="form-control" id="km" placeholder="ex: 100">
+            </div>
+
+            <button class="calculadora__button btn">Calcular Emissões</button>
+        </form>
+
+            <div class="dica">
+                <p class="dica__texto">
+                    <strong>Dica para Novo Hamburgo:</strong> Uma viagem de Trensurb até Porto Alegre emite apenas 0,05 kg de CO₂ por passageiro, enquanto de carro seriam cerca de 8 kg!
+                </p>
+            </div>
     </div>
 
     <!-- jQuery -->
@@ -138,5 +186,30 @@
 
     <!-- JS do Form -->
     <script src="../components/form/form.js"></script>
+
+    <script>
+        $(document).ready(() => {
+            function mudarCorAoClique(label) {
+                $(label).click(() => {
+                    if(label == "#label-moto") {
+                        $("#label-carro").css("background-color", "#ffffff");
+                        $("#label-carro").css("border", "1px solid #b9c4bc");
+
+                        $(label).css("background-color", "#26aa5620");
+                        $(label).css("border", "1px solid #26aa57");
+                    } else {
+                        $("#label-moto").css("background-color", "#ffffff");
+                        $("#label-moto").css("border", "1px solid #b9c4bc");
+
+                        $(label).css("background-color", "#26aa5620");
+                        $(label).css("border", "1px solid #26aa57");
+                    }
+                });
+            }
+
+            mudarCorAoClique("#label-carro");
+            mudarCorAoClique("#label-moto");
+        });
+    </script>
 </body>
 </html>

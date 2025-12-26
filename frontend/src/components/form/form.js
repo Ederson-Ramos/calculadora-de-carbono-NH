@@ -44,20 +44,25 @@ $(document).ready(() => {
                     return;
                 }
 
-                $(".mensagem-sucesso__texto").text(data.mensagem);
+                if(formulario === "#form-entrar") {
+                    $(".form-none").slideUp(900);
+                    $(".content-under").slideDown(900);
+                } else {
+                    $(".mensagem-sucesso__texto").text(data.mensagem);
 
-                $(".msg-sucesso").show();
+                    $(".msg-sucesso").show();
 
-                setTimeout(() => {
-                    $(".msg-sucesso").hide();
-                }, 5000);
+                    setTimeout(() => {
+                        $(".msg-sucesso").hide();
+                    }, 5000);
 
-                // Inputs
-                const email = $(inputEmail);
-                const senha = $(inputSenha);
+                    // Inputs
+                    const email = $(inputEmail);
+                    const senha = $(inputSenha);
 
-                email.val("");
-                senha.val("");
+                    email.val("");
+                    senha.val("");
+                }
 
             } catch(err) {
                 console.log("Erro ao cadastrar usuário:", err);

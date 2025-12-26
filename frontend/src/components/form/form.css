@@ -52,7 +52,10 @@ form .input-group-text {
 
 form .btn,
 form .btn:focus,
-form .btn:active {
+form .btn:active,
+.calculadora__button.btn,
+.calculadora__button.btn:focus,
+.calculadora__button.btn:active {
     background-color: #2eb860 !important;
     color: #ffffff !important;
     font-weight: 500;
@@ -83,6 +86,12 @@ form .btn:active {
     background-color: #f5faf7;
     box-shadow: 0 0 0 2px #2eb860;
     border-color: transparent;
+}
+
+/* CONTEUDO CALCULADORA */
+
+.content-under {
+    display: none;
 }
 
 /* LABELS DO JQUERY */
