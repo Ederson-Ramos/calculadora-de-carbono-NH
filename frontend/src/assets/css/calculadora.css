@@ -16,6 +16,14 @@ body {
     padding: 32px 16px;
 }
 
+/* apenas teste para calculadora (apagar depois) */
+.form-none {
+    display: none;
+}
+.content-under {
+    display: block;
+}
+
 /* INICIO */
 
 .inicio {
