@@ -60,6 +60,15 @@ $(document).ready(() => {
         }
     });
 
+    $(".calculadora").validate({
+        rules: {
+            kmsRodados: {
+                required: true,
+                digits: true
+            }
+        }
+    });
+
     function mostrarMensagemDeEmissao(nivel, corFundoContainer, corDefault, corFundoIcone) {
         // Mensagem
         switch(nivel) {

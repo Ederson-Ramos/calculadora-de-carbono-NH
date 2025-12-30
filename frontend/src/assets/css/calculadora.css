@@ -84,11 +84,11 @@ label,
 
 .calculadora__calc input {
     padding: 11px 9px;
-    margin: 15px 0;
+    margin-top: 15px;
 }
 
 .calculadora__button {
-    margin-bottom: 15px;
+    margin-top: 15px;
 }
 
 /* DICA */
@@ -113,6 +113,7 @@ label,
     display: none;
     padding: 20px;
     border-radius: 15px;
+    margin-top: 15px;
 }
 
 .resposta-emissao__icone {
