@@ -6,7 +6,7 @@ async function criarUsuario(email, senha) {
 }
 
 async function buscarUsuario(email) {
-    const sql = "SELECT email, senha FROM usuarios WHERE email = ?;";
+    const sql = "SELECT id, email, senha FROM usuarios WHERE email = ?;";
     const result = await db.query(sql, [email]);
 
     return result;

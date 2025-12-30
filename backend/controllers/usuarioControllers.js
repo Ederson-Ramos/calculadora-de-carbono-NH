@@ -50,7 +50,10 @@ async function entrar(req, res) {
         const senhaECorreta = await bcrypt.compare(valorSenha, usuarioExistente[0][0].senha);
 
         if(senhaECorreta) {
-            return res.status(200).json({mensagem: "Entrada liberada com sucesso."});
+            return res.status(200).json({
+                mensagem: "Entrada liberada com sucesso.",
+                idUsuario: usuarioExistente[0][0].id
+            });
         }
 
         return res.status(401).json({erro: "Email ou senha inválidos."})

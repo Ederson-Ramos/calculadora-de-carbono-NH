@@ -108,24 +108,6 @@
                 <p class="trocar-form trocar2">Já tem conta? Entre</p>
             </div>
         </div>
-
-        <div class="msg-sucesso">
-            <div class="container container--sucesso">
-                <div class="mensagem-sucesso">
-                    <i class="bi bi-check-circle-fill"></i>
-                    <p class="mensagem-sucesso__texto"></p>
-                </div>
-            </div>
-        </div>
-
-        <div class="msg-erro">
-            <div class="container container--erro">
-                <div class="mensagem-erro">
-                    <i class="bi bi-info-circle-fill"></i>
-                    <p class="mensagem-erro__texto"></p>
-                </div>
-            </div>
-        </div>
     </div>
 
     <div class="container content-under">
@@ -142,7 +124,7 @@
                 <!-- Radio Carro -->
                 <label class="radio mb-2" for="car-radio" id="label-carro">
                     <div class="d-flex align-items-center">
-                        <input type="radio" id="car-radio" name="veiculo">
+                        <input type="radio" id="car-radio" name="veiculo" value="carro">
 
                         <i class="bi bi-car-front mx-3"></i>
                         <p class="mb-0">carro</p>
@@ -152,7 +134,7 @@
                 <!-- Radio Moto -->
                 <label class="radio" for="bike-radio" id="label-moto">
                     <div class="d-flex align-items-center">
-                        <input type="radio" id="bike-radio" name="veiculo">
+                        <input type="radio" id="bike-radio" name="veiculo" value="moto">
 
                         <i class="bi bi-bicycle mx-3"></i>
                         <p class="mb-0">moto</p>
@@ -167,12 +149,41 @@
             </div>
 
             <button type="submit" class="calculadora__button btn">Calcular Emissões</button>
+
+            <div class="resposta-emissao">
+                <div class="resposta-emissao__icone">
+                    <i class="bi bi-leaf resposta-emissao__i"></i>
+                </div>
+
+                <p class="resposta-emissao__msg-co2" id="teste">Você produziu <span class="emissao"></span> de CO₂ esta semana.</p>
+
+                <p class="resposta-emissao__msg-retorno"></p>
+            </div>
         </form>
 
         <div class="dica">
             <p class="dica__texto">
                 <strong>Dica para Novo Hamburgo:</strong> Uma viagem de Trensurb até Porto Alegre emite apenas 0,05 kg de CO₂ por passageiro, enquanto de carro seriam cerca de 8 kg!
             </p>
+        </div>
+    </div>
+
+    <!-- Mensagens do Back-End -->
+    <div class="msg-sucesso">
+        <div class="container container--sucesso">
+            <div class="mensagem-sucesso">
+                <i class="bi bi-check-circle-fill"></i>
+                <p class="mensagem-sucesso__texto"></p>
+            </div>
+        </div>
+    </div>
+
+    <div class="msg-erro">
+        <div class="container container--erro">
+            <div class="mensagem-erro">
+                <i class="bi bi-info-circle-fill"></i>
+                <p class="mensagem-erro__texto"></p>
+            </div>
         </div>
     </div>
 
@@ -188,6 +199,9 @@
 
     <!-- JS do Form -->
     <script src="../components/form/form.js"></script>
+
+    <!-- JS da Calculadora -->
+    <script src="../assets/js/calculadora.js"></script>
 
     <script>
         $(document).ready(() => {

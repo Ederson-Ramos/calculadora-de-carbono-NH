@@ -45,6 +45,8 @@ $(document).ready(() => {
                 }
 
                 if(formulario === "#form-entrar") {
+                    sessionStorage.setItem("usuario_id", data.idUsuario);
+
                     $(".form-none").slideUp(900);
                     $(".content-under").slideDown(900);
                 } else {
