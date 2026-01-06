@@ -11,6 +11,8 @@ app.use("/usuarios", require("./routes/usuariosRoutes"));
 
 app.use("/calculadora", require("./routes/calculadoraRoutes"));
 
+app.use("/historico", require("./routes/historicoRoutes"));
+
 app.listen(3000, () => {
     console.log("✅ Servidor rodando na porta 3000");
 });
