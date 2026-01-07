@@ -1,4 +1,11 @@
 $(document).ready(() => {
+    const idUsuarioExiste = sessionStorage.getItem("usuario_id");
+
+    if(idUsuarioExiste) {
+        $(".form-none").css("display", "none");
+        $(".content-under").css("display", "block");
+    }
+
     $(".calculadora").submit(async (e) => {
         e.preventDefault();
 
@@ -73,15 +80,15 @@ $(document).ready(() => {
         // Mensagem
         switch(nivel) {
             case "verde":
-                $(".resposta-emissao__msg-retorno").text("Excelente! Você está mantendo suas emissões baixas. Parabéns por ajudar o meio ambiente e nossa cidade! 🌱");
+                $(".resposta-emissao__msg-retorno").html(`<p>Excelente! Suas emissões nesta semana ficaram abaixo da média. Parabéns por ajudar o meio ambiente e nossa cidade! <i class="bi bi-award" style="margin-left: 3px; font-size: 17px;"></i></p>`);
 
                 break;
             case "laranja":
-                $(".resposta-emissao__msg-retorno").text("Bom trabalho! Considere usar o transporte público de Novo Hamburgo quando possível para reduzir suas emissões. 🌍");
+                $(".resposta-emissao__msg-retorno").html(`Suas emissões estão dentro da média semanal. Se possível, reduzir alguns deslocamentos já diminui seu impacto ambiental. <i class="bi bi-balloon-heart" style="margin-left: 3px; font-size: 17px;"></i>`);
 
                 break;
             case "vermelho":
-                $(".resposta-emissao__msg-retorno").text("Suas emissões desta semana foram altas. Considere carona solidária ou o Trensurb para reduzir suas emissões. 💚");
+                $(".resposta-emissao__msg-retorno").html(`Suas emissões nesta semana ficaram acima da média. Sempre que puder, considere alternativas como carona ou transporte coletivo. <i class="bi bi-bandaid" style="margin-left: 3px; font-size: 17px;"></i>`);
 
                 break;
         }

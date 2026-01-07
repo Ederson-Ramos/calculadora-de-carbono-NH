@@ -1,4 +1,6 @@
-// Esses valores são baseados na media que as pessoas rodam em uma semana (250km / semana) para cada tipo de veiculo.
+//Valores baseados na média semanal de emissões de CO₂(kg)
+//estimada para veículos a combustão no Brasil
+
 function classificarEmissao(veiculo, emissao) {
     switch(veiculo) {
         case "carro":
@@ -6,16 +8,16 @@ function classificarEmissao(veiculo, emissao) {
                 return "verde";
             }
 
-            if(emissao <= 45) {
+            if(emissao > 30 && emissao <= 55) {
                 return "laranja";
             }
 
             return "vermelho";
         case "moto":
-            if(emissao <= 12) {
+            if(emissao <= 7) {
                 return "verde";
             }
-            if(emissao <= 22) {
+            if(emissao > 7 && emissao <= 12) {
                 return "laranja";
             }
 

@@ -39,8 +39,8 @@
             <div class="nav__container">
                 <nav class="nav__header">
                     <a href="index.html" class="nav__link">Início</a>
-                    <a href="calculadora.html" class="nav__link nav__link--active">Calculadora</a>
-                    <a href="historico.html" class="nav__link">Histórico</a>        
+                    <a href="calculadora.html" class="nav__link">Calculadora</a>
+                    <a href="historico.html" class="nav__link nav__link--active">Histórico</a>        
                 </nav>
             </div>
         </div>
@@ -114,37 +114,20 @@
         <div class="inicio">
             <h1 class="inicio__titulo">Seu Histórico de Emissões</h1>
 
-            <p class="inicio__texto">Acompanhe sua pegada de carbono ao decorrer do tempo</p>
+            <p class="inicio__texto">Acompanhe sua pegada de carbono em Novo Hamburgo</p>
         </div>
 
-        <div class="emissoes">
-            <div class="emissao col-sm-12 col-md-12 col-lg-12">
-                <div>
-                    <div class="veiculo">
-                        <span class="veiculo__icone">
-                            <i class="bi bi-bicycle"></i>
-                        </span>
-
-                        <p class="veiculo__tipo">Moto</p>
-                    </div>
-
-                    <div class="distancia">
-                        <p class="distancia__label">Distância</p>
-
-                        <p class="distancia__valor">29.0 km</p>
-                    </div>
-                </div>
-
-                <div>
-                    <p class="data-emissao">25/01/2003</p>
-
-                    <div class="carbono">
-                        <p class="carbono__label">CO₂ Emitido</p>
-
-                        <p class="carbono__valor">5.8 kg</p>
-                    </div>
-                </div>
+        <div class="sem-emissao">
+            <div>
+                <i class="bi bi-cloud-slash sem-emissao__icone"></i>
             </div>
+
+            <p class="sem-emissao__titulo">Nenhum histórico ainda</p>
+
+            <p class="sem-emissao__mensagem">Comece a acompanhar suas emissões usando a calculadora.</p>
+        </div>
+
+        <div class="emissoes col-sm-12 col-md-12 col-lg-12">
         </div>
     </div>
 
@@ -179,5 +162,8 @@
 
     <!-- JS do Form -->
     <script src="../components/form/form.js"></script>
+
+    <!-- JS do Historico -->
+    <script src="../assets/js/historico.js"></script>
 </body>
 </html>

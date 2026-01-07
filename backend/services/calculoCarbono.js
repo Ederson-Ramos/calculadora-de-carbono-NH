@@ -1,11 +1,11 @@
 function calculo(veiculo, km) {
     switch(veiculo) {
         case "moto":
-            const emissaoMoto = km * 0.09;
+            const emissaoMoto = km * 0.055;
 
             return Number(emissaoMoto.toFixed(2));
         case "carro":
-            const emissaoCarro = km * 0.19;
+            const emissaoCarro = km * 0.15;
 
             return Number(emissaoCarro.toFixed(2));
         default:
