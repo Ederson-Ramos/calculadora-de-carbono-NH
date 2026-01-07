@@ -14,7 +14,7 @@ $(document).ready(() => {
         const kmsRodados = $("#km").val();
 
         try {
-            const resposta = await fetch("http://localhost:3000/calculadora/emissao", {
+            const resposta = await fetch(`${API_URL}/calculadora/emissao`, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json"
