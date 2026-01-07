@@ -7,7 +7,7 @@ $(document).ready(async() => {
     }
 
     try {
-        const resposta = await fetch(`${API_URL}/historico/emissoes?idUsuario=${idUsuario}`);
+        const resposta = await fetch(`https://backend-carbono.onrender.com/historico/emissoes?idUsuario=${idUsuario}`);
 
         const data = await resposta.json();
 

@@ -22,7 +22,7 @@ $(document).ready(() => {
             const valorSenha = $(inputSenha).val();
 
             try {
-                const resposta = await fetch(`${API_URL}/usuarios/${rota}`, {
+                const resposta = await fetch(`https://backend-carbono.onrender.com/usuarios/${rota}`, {
                     method: "POST",
                     headers: {
                         "Content-Type": "application/json"
