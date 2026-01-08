@@ -99,7 +99,7 @@
                         <label for="senhaCadastro" class="form-label">Senha</label>
                         <div class="input-group flex-nowrap">
                             <i class="bi bi-lock input-group-text"></i>
-                            <input type="password" class="form-control" id="senhaCadastro" name="senha" placeholder="••••••••">
+                            <input type="password" class="form-control" id="senhaCadastro" name="senha" placeholder="••••••">
                         </div>
                     </div>
                     <button type="submit" class="btn">Cadastrar</button>
@@ -115,6 +115,10 @@
             <h1 class="inicio__titulo">Seu Histórico de Emissões</h1>
 
             <p class="inicio__texto">Acompanhe sua pegada de carbono em Novo Hamburgo</p>
+        </div>
+
+        <div class="loading">
+            <img src="assets/img/loading.gif" alt="Gif de uma animação de carregamento">
         </div>
 
         <div class="sem-emissao">
@@ -161,9 +165,11 @@
     <script src="components/header/header.js"></script>
 
     <!-- JS do Form -->
-    <script src="components/form/form.js"></script>
+    <script type="module" src="components/form/form.js"></script>
 
     <!-- JS do Historico -->
-    <script src="assets/js/historico.js"></script>
+    <script type="module" src="assets/js/historico.js"></script>
+
+    <script type="module" src="assets/js/utils.js"></script>
 </body>
 </html>

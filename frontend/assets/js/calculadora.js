@@ -2,8 +2,8 @@ $(document).ready(() => {
     const idUsuarioExiste = sessionStorage.getItem("usuario_id");
 
     if(idUsuarioExiste) {
-        $(".form-none").css("display", "none");
-        $(".content-under").css("display", "block");
+        $(".form-none").hide();
+        $(".content-under").show();
     }
 
     $(".calculadora").submit(async (e) => {

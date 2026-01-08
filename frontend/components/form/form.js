@@ -1,14 +1,15 @@
-$(document).ready(() => {
+import {carregarHistorico} from "../../assets/js/utils.js";
 
+$(document).ready(() => {
     function trocarForm() {
         $(".trocar1").click(() => {
-            $(".fomulario-cadastrar").css({ display: "block" });
-            $(".fomulario-entrar").css({ display: "none" });
+            $(".fomulario-cadastrar").show();
+            $(".fomulario-entrar").hide();
         });
 
         $(".trocar2").click(() => {
-            $(".fomulario-cadastrar").css({ display: "none" });
-            $(".fomulario-entrar").css({ display: "block" });
+            $(".fomulario-cadastrar").hide();
+            $(".fomulario-entrar").show();
         });
     }
 
@@ -44,27 +45,26 @@ $(document).ready(() => {
                     return;
                 }
 
-                if(formulario === "#form-entrar") {
-                    sessionStorage.setItem("usuario_id", data.idUsuario);
+                sessionStorage.setItem("usuario_id", data.idUsuario);
 
-                    $(".form-none").slideUp(900);
-                    $(".content-under").slideDown(900);
-                } else {
-                    $(".mensagem-sucesso__texto").text(data.mensagem);
+                $(".form-none").slideUp(900);
+                $(".content-under").slideDown(900);
 
-                    $(".msg-sucesso").show();
+                carregarHistorico();
 
-                    setTimeout(() => {
-                        $(".msg-sucesso").hide();
-                    }, 5000);
+                $(".mensagem-sucesso__texto").text(data.mensagem);
+                $(".msg-sucesso").show();
 
-                    // Inputs
-                    const email = $(inputEmail);
-                    const senha = $(inputSenha);
+                setTimeout(() => {
+                    $(".msg-sucesso").hide();
+                }, 5000);
 
-                    email.val("");
-                    senha.val("");
-                }
+                // Inputs
+                const email = $(inputEmail);
+                const senha = $(inputSenha);
+
+                email.val("");
+                senha.val("");
 
             } catch(err) {
                 console.log("Erro ao cadastrar usuário:", err);
