@@ -1,8 +1,10 @@
 const pool = require("../config/db");
 
 async function criarUsuario(email, senha) {
-    const sql = "INSERT INTO usuarios (email, senha) VALUES ($1, $2);";
-    await pool.query(sql, [email, senha]);
+    const sql = "INSERT INTO usuarios (email, senha) VALUES ($1, $2) RETURNING id;";
+    const {rows} = await pool.query(sql, [email, senha]);
+
+    return rows[0];
 }
 
 async function buscarUsuario(email) {
