@@ -13,6 +13,8 @@ export async function carregarHistorico() {
             $(".inicio").show();
             $(".loading").hide();
 
+            let totalEmissao = 0;
+
             data.forEach(i => {
                 const tipoVeiculo = i.tipo == "carro" ? "<i class='bi bi-car-front'></i>" : "<i class='bi bi-bicycle'></i>";
 
@@ -65,7 +67,12 @@ export async function carregarHistorico() {
                         </div>
                     </div>
                 `);
+
+                totalEmissao += Number(i.co2_emitido);
             });
+
+            // Evolução semanal do usuário
+            evolucaoUsuario(data, totalEmissao);
         } else {
             $(".inicio").show();
             $(".sem-emissao").show();
@@ -73,5 +80,73 @@ export async function carregarHistorico() {
         } 
     } catch (err) {
         console.log("Erro ao exibir histórico:", err);
+    }
+}
+
+function evolucaoUsuario(data, totalEmissao) {
+    if (data.length >= 2) {
+        $(".emissoes").prepend(`
+            <div class="card-evolucao">
+                <div class="card-evolucao__topo">
+                    <div class="card-evolucao__icone"></div>
+
+                    <div>
+                        <p class="card-evolucao__valor">${totalEmissao} kg CO₂</p>
+                        <p class="card-evolucao__label">Total de emissões registradas</p>
+                    </div>
+                </div>
+
+                <hr></hr>
+
+                <p class="card-evolucao__mensagem"></p>
+            </div>
+        `);
+
+        const diferenca = data[0].co2_emitido - data[1].co2_emitido;
+        const valorAbs = Math.abs(diferenca.toFixed(1));
+
+        if (diferenca <= -1) {
+            $(".card-evolucao__mensagem").text(`Você emitiu ${valorAbs} kg a menos de CO₂ do que na semana passada.`);
+
+            $(".card-evolucao__icone").append(`<i class="bi bi-arrow-up-right-circle bi-evo"></i>`);
+
+            $(".card-evolucao").css({
+                "background-color": "#dcf9e7",
+                "border": "1px solid #26aa57"
+            });
+
+            $(".bi-evo").css({
+                "background-color": "#22c35d1a",
+                "color": "#26aa57"
+            });
+        } else if (diferenca > -1 && diferenca < 1) {
+            $(".card-evolucao__mensagem").text("Suas emissões ficaram próximas da semana passada.");
+
+            $(".card-evolucao__icone").append(`<i class="bi bi-arrow-repeat bi-evo"></i>`);
+
+            $(".card-evolucao").css({
+                "background-color": "#fdeed8",
+                "border": "1px solid #f2930d"
+            });
+
+            $(".bi-evo").css({
+                "background-color": "#f2930d1a",
+                "color": "#f2930d"
+            });
+        } else {
+            $(".card-evolucao__mensagem").text(`Você emitiu ${valorAbs} kg a mais de CO₂ do que na semana passada.`);
+
+            $(".card-evolucao__icone").append(`<i class="bi bi-arrow-down-right-circle bi-evo"></i>`);
+
+            $(".card-evolucao").css({
+                "background-color": "#f9dcdc",
+                "border": "1px solid #dd3c3c"
+            });
+
+            $(".bi-evo").css({
+                "background-color": "#dd3c3c1a",
+                "color": "#dd3c3c"
+            });
+        }
     }
 }
