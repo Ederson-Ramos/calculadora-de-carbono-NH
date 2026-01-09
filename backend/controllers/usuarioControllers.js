@@ -24,7 +24,7 @@ async function cadastrar(req, res) {
         const novoUsuario = await usuarioModels.criarUsuario(valorEmail, senhaHash);
 
         return res.status(201).json({
-            mensagem: "Usuário cadastrado com sucesso. Entre na sua conta!",
+            mensagem: "Usuário cadastrado com sucesso.",
             idUsuario: novoUsuario.id
         });
     } catch(err) {

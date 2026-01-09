@@ -80,15 +80,15 @@ $(document).ready(() => {
         // Mensagem
         switch(nivel) {
             case "verde":
-                $(".resposta-emissao__msg-retorno").html(`<p>Excelente! Suas emissões nesta semana ficaram abaixo da média. Parabéns por ajudar o meio ambiente e nossa cidade! <i class="bi bi-award" style="margin-left: 3px; font-size: 17px;"></i></p>`);
+                $(".resposta-emissao__msg-retorno").html(`<p>Excelente! Suas emissões nesta semana ficaram abaixo da média semanal da população. Parabéns por ajudar o meio ambiente e nossa cidade! <i class="bi bi-award" style="margin-left: 3px; font-size: 17px;"></i></p>`);
 
                 break;
             case "laranja":
-                $(".resposta-emissao__msg-retorno").html(`Suas emissões estão dentro da média semanal. Se possível, reduzir alguns deslocamentos já diminui seu impacto ambiental. <i class="bi bi-balloon-heart" style="margin-left: 3px; font-size: 17px;"></i>`);
+                $(".resposta-emissao__msg-retorno").html(`Suas emissões estão dentro da média semanal da população. Pequenas mudanças já reduzem seu impacto ambiental. <i class="bi bi-balloon-heart" style="margin-left: 3px; font-size: 17px;"></i>`);
 
                 break;
             case "vermelho":
-                $(".resposta-emissao__msg-retorno").html(`Suas emissões nesta semana ficaram acima da média. Sempre que puder, considere alternativas como carona ou transporte coletivo. <i class="bi bi-bandaid" style="margin-left: 3px; font-size: 17px;"></i>`);
+                $(".resposta-emissao__msg-retorno").html(`Suas emissões nesta semana ficaram acima da média semanal da população. Sempre que puder, considere alternativas como carona ou transporte coletivo. <i class="bi bi-bandaid" style="margin-left: 3px; font-size: 17px;"></i>`);
 
                 break;
         }
